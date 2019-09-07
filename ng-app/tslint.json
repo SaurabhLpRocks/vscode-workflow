@@ -55,9 +55,10 @@
     "only-arrow-functions": true,
     "object-literal-shorthand": true,
     "ordered-imports": [true, { "import-sources-order": "lowercase-last", "named-imports-order": "lowercase-first" }],
-    "no-unnecessary-else": true,
     "early-exit": true,
-    "cyclomatic-complexity": [true, 15]
+    "cyclomatic-complexity": [true, 15],
+    "no-collapsible-if": true,
+    "no-unnecessary-else": true
   },
   "rulesDirectory": ["codelyzer"]
 }
