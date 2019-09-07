@@ -3,14 +3,30 @@
   "version": "1.0.0",
   "description": "Fullstack app to demonstrate end to end workflow of Angular and ASP Net Core app inside VS Code.",
   "main": "index.js",
+  "keywords": [
+    "vscode",
+    "angular",
+    "aspnetcore",
+    ".net",
+    "angular-cli",
+    "workflow",
+    "vscode-workflow"
+  ],
+  "author": "Saurabh Palatkar",
+  "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
     }
   },
   "lint-staged": {
-    "*.{ts,html,scss,md,css}": [
-      "npm run fix-ui-lint",
+    "ng-app/src/**/*.ts": [
+      "npm run fix-ng-lint",
+      "git add"
+    ],
+    "*.{html,scss,md,css}": [
+      "npm run fix-formatting",
       "git add"
     ]
   },
@@ -18,23 +34,13 @@
     "serve-ui-dev-local": "cd ng-app &&  ng serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix-formatting": "prettier --config ./ng-app/.prettierrc --write \"{,!(node_modules|dist|build|coverage)/**/}*.{ts,html,scss,md,css}\"",
-    "fix-ng-lint": "cd ng-app && ng lint --fix",
-    "fix-ui-lint": "concurrently \"npm:fix-formatting\" \"npm:fix-ng-lint\""
+    "fix-ng-lint": "cd ng-app && ng-lint-staged lint --fix --"
   },
-  "keywords": [
-    "vscode",
-    "angular",
-    "aspnetcore",
-    ".net",
-    "angular-cli",
-    "workflow"
-  ],
-  "author": "Saurabh Palatkar",
-  "license": "MIT",
   "devDependencies": {
     "concurrently": "^4.1.2",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
+    "ng-lint-staged": "^0.1.6",
     "prettier": "^1.18.2"
   }
 }
