@@ -44,24 +44,25 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "publish",
+      "label": "watch",
       "command": "dotnet",
       "type": "process",
       "args": [
-        "publish",
+        "watch",
+        "--project",
         "${workspaceFolder}/CoreApi/CoreApi.csproj",
+        "run",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "watch",
+      "label": "publish",
       "command": "dotnet",
       "type": "process",
       "args": [
-        "watch",
-        "run",
+        "publish",
         "${workspaceFolder}/CoreApi/CoreApi.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
