@@ -48,7 +48,7 @@
       "request": "launch",
       "preLaunchTask": "build",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/dotnet-app/bin/Debug/netcoreapp2.2/dotnet-app.dll",
+      "program": "${workspaceFolder}/CoreApi/bin/Debug/netcoreapp2.2/CoreApi.dll",
       "args": [],
       "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
@@ -61,7 +61,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "sourceFileMap": {
-        "/Views": "${workspaceFolder}/dotnet-app/Views"
+        "/Views": "${workspaceFolder}/CoreApi/Views"
       }
     },
     {
