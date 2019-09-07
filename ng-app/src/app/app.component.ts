@@ -8,9 +8,7 @@ import { AfterViewInit, Component } from '@angular/core';
 export class AppComponent implements AfterViewInit {
   title = 'ng-app';
   variable = 'test';
-  ngAfterViewInit(): void {
-    console.log('vscode chrome debugging test: ', this.title);
-  }
+  ngAfterViewInit(): void {}
 
-  test() {    }
+  test() {}
 }
