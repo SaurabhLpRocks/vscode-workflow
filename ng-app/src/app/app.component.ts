@@ -12,5 +12,5 @@ export class AppComponent implements AfterViewInit {
     console.log('vscode chrome debugging test: ', this.title);
   }
 
-  test() {}
+  test() {    }
 }

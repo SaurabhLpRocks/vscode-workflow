@@ -1,6 +1,17 @@
 {
   "name": "ng-app",
   "version": "0.0.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,html,scss,md,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
