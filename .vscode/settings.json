@@ -5,11 +5,11 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "prettier.printWidth": 140,
-  "editor.formatOnSave": true,
-  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "eslint.autoFixOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": false,
+    "source.organizeImports": false
   },
   "editor.formatOnPaste": false,
   "editor.codeActionsOnSaveTimeout": 750,
