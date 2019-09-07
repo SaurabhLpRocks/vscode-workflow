@@ -1,0 +1,35 @@
+{
+  "tslint.configFile": "./tslint.json",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 140,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnPaste": false,
+  "editor.codeActionsOnSaveTimeout": 750,
+  "editor.formatOnSaveTimeout": 750,
+  "npm.enableScriptExplorer": true,
+  "docthis.includeDateTag": true,
+  "cSpell.words": ["Dropdown", "SAURABH", "Textbox"],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2f7c47",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#422c74",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "titleBar.activeBackground": "#215732",
+    "titleBar.inactiveBackground": "#21573299",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#215732",
+    "statusBarItem.hoverBackground": "#2f7c47",
+    "statusBar.foreground": "#e7e7e7"
+  },
+  "peacock.color": "#215732"
+}

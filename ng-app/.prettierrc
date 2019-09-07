@@ -1,0 +1,14 @@
+{
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 140,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.js*, *.ts*",
+      "options": {
+        "prettier.printWidth": 140
+      }
+    }
+  ]
+}
