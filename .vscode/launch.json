@@ -42,6 +42,15 @@
       }
     },
     {
+      "name": "API Launch (Live Watch)",
+      "type": "DotNetAutoAttach",
+      "request": "launch",
+      "args": [],
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
       "name": "API Attach",
       "type": "coreclr",
       "request": "attach",
