@@ -68,6 +68,11 @@
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build Api Docker",
+      "type": "npm",
+      "script": "serve-api-dev-docker"
     }
   ]
 }

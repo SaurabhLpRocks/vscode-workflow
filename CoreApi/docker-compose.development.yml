@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  core.api:
+    image: core.api.dev.image
+    container_name: core.api.dev.container
+    build:
+      args:
+        buildconfig: Debug
+      context: .
+      dockerfile: .docker/development.dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 5001:80
+    volumes:
+      - "./:/app"

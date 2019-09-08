@@ -20,23 +20,6 @@
       }
     },
     {
-      "name": "UI E2E Test",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/ng-app/node_modules/protractor/bin/protractor",
-      "protocol": "inspector",
-      "args": ["${workspaceFolder}/ng-app/e2e/protractor.conf.js"]
-    },
-    {
-      "name": "API Launch (watch)",
-      "type": "DotNetAutoAttach",
-      "request": "launch",
-      "args": [],
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    {
       "name": "API Launch",
       "type": "coreclr",
       "request": "launch",
@@ -63,6 +46,44 @@
       "type": "coreclr",
       "request": "attach",
       "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "API Launch (Docker)",
+      "type": "docker-coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "dockerBuild": {
+        "dockerfile": "${workspaceFolder}/CoreApi/.docker/development.dockerfile",
+        "context": "${workspaceFolder}/CoreApi",
+        "target": "DEV"
+      },
+      "appProject": "${workspaceFolder}/CoreApi/CoreApi.csproj",
+      "dockerRun": {
+        "ports": [
+          {
+            "hostPort": "5001",
+            "containerPort": "80"
+          }
+        ],
+        "volumes": [{ "localPath": "${workspaceFolder}/CoreApi/", "containerPath": "/src" }]
+      }
+    },
+    {
+      "name": "UI E2E Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/ng-app/node_modules/protractor/bin/protractor",
+      "protocol": "inspector",
+      "args": ["${workspaceFolder}/ng-app/e2e/protractor.conf.js"]
+    },
+    {
+      "name": "API Launch (watch)",
+      "type": "DotNetAutoAttach",
+      "request": "launch",
+      "args": [],
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     {
       "name": "UI Test",
