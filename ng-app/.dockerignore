@@ -1,0 +1,33 @@
+# editor configs
+Properties
+.vscode
+.editorconfig
+.prettierrc
+.stylelintrc.json
+
+# code binaries
+bin
+obj
+node_modules
+npm-debug.log
+log
+
+# .Net project files
+*.csproj
+*.cs
+
+# docs
+*.md
+*.txt
+LICENSE
+
+# docker
+.docker
+.dockerignore
+Dockerfile
+*/docker-compose*
+
+# repositories
+.git
+.hg
+.svn

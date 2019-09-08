@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  ng-app-service:
+    image: ng.app.dev.image
+    container_name: ng.app.dev.container
+    build:
+      context: .
+      dockerfile: .docker/development.dockerfile
+    environment:
+      NODE_ENV: development
+    volumes:
+      - './:/usr/share/app'
+      - /app/node_modules/
+    ports:
+      - 4200:80
+    ## set your startup file here
+    command: ['sh', '-c', 'ng serve --host=0.0.0.0 --watch --poll=2000']
+    # command: ['sh', '-c', 'npm rebuild node-sass --force && ng serve --host=0.0.0.0 --watch --poll=2000']
