@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   ng-app-service:
@@ -10,10 +10,17 @@ services:
     environment:
       NODE_ENV: development
     volumes:
-      - './:/usr/share/app'
+      - "./:/usr/share/app"
       - /app/node_modules/
     ports:
       - 4200:80
+      - 9222:9222
     ## set your startup file here
-    command: ['sh', '-c', 'ng serve --host=0.0.0.0 --watch --poll=2000']
+    # command: ['sh', '-c', 'ng serve --host=0.0.0.0 --watch --poll=2000']
+    command:
+      [
+        "sh",
+        "-c",
+        "npm start --host=0.0.0.0 --watch --poll=2000 --inspect=9222 --remote-debugging-port=9222 --nolazy",
+      ]
     # command: ['sh', '-c', 'npm rebuild node-sass --force && ng serve --host=0.0.0.0 --watch --poll=2000']

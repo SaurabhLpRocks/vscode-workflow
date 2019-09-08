@@ -9,6 +9,4 @@ export class AppComponent implements AfterViewInit {
   title = 'ng-app';
   variable = 'test';
   ngAfterViewInit(): void {}
-
-  test() {}
 }

@@ -63,6 +63,22 @@
       "processId": "${command:pickProcess}"
     },
     {
+      "type": "chrome",
+      "request": "launch",
+      "name": "UI Launch (Docker)",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/ng-app",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      },
+      "trace": true,
+      "runtimeArgs": ["--remote-debugging-port=9222"]
+    },
+    {
       "name": "API Launch (Docker)",
       "type": "docker-coreclr",
       "request": "launch",
