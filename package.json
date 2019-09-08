@@ -32,7 +32,11 @@
   },
   "scripts": {
     "serve-ui-dev-local": "cd ng-app &&  ng serve",
+    "serve-api-dev-local": "cd CoreApi && dotnet run",
+    "serve-app-dev-local": "concurrently \"npm:serve-ui-dev-local\" \"npm:serve-api-dev-local\"",
+    "serve-ui-dev-docker": "cd ng-app && npm run docker-serve-dev",
     "serve-api-dev-docker": "docker-compose -f CoreApi/docker-compose.development.yml up --build -d",
+    "serve-app-dev-docker": "concurrently \"npm:serve-api-dev-docker\" \"npm:serve-ui-dev-docker\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix-formatting": "prettier --config ./ng-app/.prettierrc --write \"{,!(node_modules|dist|build|coverage)/**/}*.{ts,html,scss,md,css}\"",
     "fix-ng-lint": "cd ng-app && ng-lint-staged lint --fix --"
