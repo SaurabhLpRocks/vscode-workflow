@@ -35,6 +35,7 @@
     "serve-api-dev-local": "cd CoreApi && dotnet run",
     "serve-app-dev-local": "concurrently \"npm:serve-ui-dev-local\" \"npm:serve-api-dev-local\"",
     "serve-ui-dev-docker": "cd ng-app && npm run docker-serve-dev",
+    "remove-ui-dev-docker-container": "docker rm -f ng.app.dev.container",
     "serve-api-dev-docker": "docker-compose -f CoreApi/docker-compose.development.yml up --build -d",
     "serve-app-dev-docker": "concurrently \"npm:serve-api-dev-docker\" \"npm:serve-ui-dev-docker\"",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -65,6 +65,8 @@
     {
       "type": "chrome",
       "request": "launch",
+      "preLaunchTask": "serve ui dev docker",
+      "postDebugTask": "remove ui dev docker container",
       "name": "UI Launch (Docker)",
       "url": "http://localhost:4200",
       "webRoot": "${workspaceFolder}/ng-app",
@@ -74,9 +76,7 @@
         "/src/*": "${webRoot}/*",
         "/*": "*",
         "/./~/*": "${webRoot}/node_modules/*"
-      },
-      "trace": true,
-      "runtimeArgs": ["--remote-debugging-port=9222"]
+      }
     },
     {
       "name": "API Launch (Docker)",

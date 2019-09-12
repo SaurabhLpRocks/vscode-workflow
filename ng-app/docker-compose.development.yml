@@ -14,13 +14,6 @@ services:
       - /app/node_modules/
     ports:
       - 4200:80
-      - 9222:9222
     ## set your startup file here
-    # command: ['sh', '-c', 'ng serve --host=0.0.0.0 --watch --poll=2000']
-    command:
-      [
-        "sh",
-        "-c",
-        "npm start --host=0.0.0.0 --watch --poll=2000 --inspect=9222 --remote-debugging-port=9222 --nolazy",
-      ]
-    # command: ['sh', '-c', 'npm rebuild node-sass --force && ng serve --host=0.0.0.0 --watch --poll=2000']
+    command: ["ng", "serve", "--host=0.0.0.0", "--watch", "--poll=2000"]
+  # command: ['sh', '-c', 'npm rebuild node-sass --force && ng serve --host=0.0.0.0 --watch --poll=2000']

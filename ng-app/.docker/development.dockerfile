@@ -20,6 +20,4 @@ COPY . .
 ENV PATH /node_modules/.bin:$PATH
 EXPOSE 80
 EXPOSE 9222
-CMD ["sh", "-c", "ng serve --host=0.0.0.0 --watch --poll=2000"]
-# CMD ["sh", "-c", "npm start --host=0.0.0.0 --watch --poll=2000 --inspect=0.0.0.0:9222 --remote-debugging-port=9222 --nolazy"]
-# CMD ["sh", "-c", "npm rebuild node-sass --force && ng serve --host=0.0.0.0 --watch --poll=2000"]
+CMD ["ng", "serve", "--host=0.0.0.0", "--watch", "--poll=2000"]
