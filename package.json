@@ -16,6 +16,7 @@
   "license": "MIT",
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
       "post-commit": "git update-index --again"
     }
@@ -43,6 +44,8 @@
     "fix-ng-lint": "cd ng-app && ng-lint-staged lint --fix --"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "concurrently": "^4.1.2",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
