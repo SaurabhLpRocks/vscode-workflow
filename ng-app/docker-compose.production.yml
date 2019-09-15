@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  ng-app-service:
+    image: ng.app.prod.image
+    container_name: ng.app.prod.container
+    build:
+      context: .
+      dockerfile: .docker/production.dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
+    command: [nginx, "-g", "daemon off;"]
