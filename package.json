@@ -41,6 +41,7 @@
     "serve-app-dev-docker": "concurrently \"npm:serve-api-dev-docker\" \"npm:serve-ui-dev-docker\"",
     "serve-ui-prod-docker": "cd ng-app && npm run docker-serve-prod",
     "serve-api-prod-docker": "docker-compose -f CoreApi/docker-compose.production.yml up --build -d",
+    "serve-app-prod-docker": "concurrently \"npm:serve-api-prod-docker\" \"npm:serve-ui-prod-docker\"",
     "fix-formatting": "prettier --config ./ng-app/.prettierrc --write \"{,!(node_modules|dist|build|coverage)/**/}*.{ts,html,scss,md,css}\"",
     "fix-ng-lint": "cd ng-app && ng-lint-staged lint --fix --"
   },
