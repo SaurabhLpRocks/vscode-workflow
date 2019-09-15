@@ -16,20 +16,30 @@
   "editor.formatOnSaveTimeout": 750,
   "npm.enableScriptExplorer": true,
   "docthis.includeDateTag": true,
-  "cSpell.words": ["Dropdown", "SAURABH", "Textbox"],
+  "cSpell.words": [
+    "Dropdown",
+    "SAURABH",
+    "Textbox"
+  ],
   "workbench.colorCustomizations": {
-    "activityBar.background": "#2f7c47",
+    "activityBar.background": "#d04649",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#422c74",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "titleBar.activeBackground": "#215732",
-    "titleBar.inactiveBackground": "#21573299",
+    "activityBarBadge.background": "#37cb34",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#b52e31",
+    "titleBar.inactiveBackground": "#b52e3199",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveForeground": "#e7e7e799",
-    "statusBar.background": "#215732",
-    "statusBarItem.hoverBackground": "#2f7c47",
+    "statusBar.background": "#b52e31",
+    "statusBarItem.hoverBackground": "#d04649",
     "statusBar.foreground": "#e7e7e7"
   },
-  "peacock.color": "#215732"
+  "peacock.color": "#b52e31",
+  "files.exclude": {
+    "ng-app\\node_modules": true,
+    "ng-app\\dist": true,
+    "CoreApi\\bin": true,
+    "CoreApi\\obj": true
+  }
 }
