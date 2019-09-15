@@ -257,7 +257,6 @@ _Pvt_Extensions
 
 # compiled output
 /dist
-/CentralizedConfiguration.UI/dist
 /tmp
 /out-tsc
 
@@ -265,7 +264,7 @@ _Pvt_Extensions
 /node_modules
 
 #Database files
-/CentralizedConfiguration.Database/CentralizedConfiguration.Database.jfm
+**/*.jfm
 
 
 
