@@ -15,7 +15,7 @@
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "ng serve dev local",
-      "url": "http://localhost:4200/#",
+      "url": "http://localhost:80/#",
       "webRoot": "${workspaceFolder}/ng-app",
       "sourceMapPathOverrides": {
         "webpack:/*": "${webRoot}/*",
