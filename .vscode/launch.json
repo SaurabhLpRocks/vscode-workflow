@@ -83,22 +83,41 @@
       "type": "docker-coreclr",
       "request": "launch",
       "preLaunchTask": "build",
+      "configureAspNetCoreSsl": true,
+      "appProject": "${workspaceFolder}/CoreApi/CoreApi.csproj",
       "dockerBuild": {
         "dockerfile": "${workspaceFolder}/CoreApi/.docker/development.dockerfile",
+        /*As our docker file resides inside .docker folder, reset conext to project root
+        i.e. vscode-workflow/CoreApi*/
         "context": "${workspaceFolder}/CoreApi",
-        "target": "DEV"
+        "target": "base"
       },
-      "appProject": "${workspaceFolder}/CoreApi/CoreApi.csproj",
       "dockerRun": {
+        "env": {
+          /*The aspnet core docker container runs by default on port 80,
+          force it to run on 5000 & 5001*/
+          "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
+        },
         "ports": [
           {
+            "hostPort": "5000",
+            "containerPort": "5000"
+          },
+          {
             "hostPort": "5001",
-            "containerPort": "80"
+            "containerPort": "5001"
           }
         ],
-        "volumes": [{ "localPath": "${workspaceFolder}/CoreApi/", "containerPath": "/src" }]
+        "volumes": [
+          {
+            "localPath": "${workspaceFolder}/CoreApi/",
+            "containerPath": "/src",
+            "permissions": "rw"
+          }
+        ]
       }
     },
+
     {
       "name": "UI E2E Test",
       "type": "node",

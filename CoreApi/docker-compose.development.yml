@@ -11,7 +11,13 @@ services:
       dockerfile: .docker/development.dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - Kestrel__Certificates__Default__Path=/root/.dotnet/https/aspnetcore-cert.pfx
+      - Kestrel__Certificates__Default__Password=yourpassword
+      - ASPNETCORE_URLS=http://0.0.0.0:5000/;https://0.0.0.0:5001
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
     ports:
-      - 5001:80
+      - 5000:5000
+      - 5001:5001
     volumes:
-      - "./:/app"
+      - "c:/cert/:/root/.dotnet/https"
+      - "./:/src"
