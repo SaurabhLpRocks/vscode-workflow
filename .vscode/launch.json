@@ -63,11 +63,11 @@
       "processId": "${command:pickProcess}"
     },
     {
+      "name": "UI Launch (Docker)",
       "type": "chrome",
       "request": "launch",
       "preLaunchTask": "serve ui dev docker",
       "postDebugTask": "remove ui dev docker container",
-      "name": "UI Launch (Docker)",
       "url": "http://localhost:4200",
       "webRoot": "${workspaceFolder}/ng-app",
       "sourceMapPathOverrides": {
@@ -106,15 +106,6 @@
       "program": "${workspaceFolder}/ng-app/node_modules/protractor/bin/protractor",
       "protocol": "inspector",
       "args": ["${workspaceFolder}/ng-app/e2e/protractor.conf.js"]
-    },
-    {
-      "name": "API Launch (watch)",
-      "type": "DotNetAutoAttach",
-      "request": "launch",
-      "args": [],
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     },
     {
       "name": "UI Test",
