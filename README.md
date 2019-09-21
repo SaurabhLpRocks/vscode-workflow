@@ -10,9 +10,9 @@ The complete project is explained in [this blog post](https://medium.com/@spp020
 
 1.  Essential VS Code Extensions
 2.  Basic Angular-cli and ASP Dot Net Core WebAPI app
-3.  Essential VS Code settings to maintain the readable code with same quality accross team
+3.  Essential VS Code settings to maintain the readable code with the same quality across the team
 4.  Essential Typescript, SCSS linting rules with the help of prettier integration with tslint and stylelint
-5.  Consistent code styling and formatting across team with the help of prettier
+5.  Consistent code styling and formatting across the team with the help of prettier
 6.  Git commit message hygiene using Git message linting
 7.  Automated pre-commit git hooks, so that no bad code is pushed to the repository
 8.  Dockerizing Angular and Dot Net app for both development and production
