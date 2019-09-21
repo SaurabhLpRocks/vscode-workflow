@@ -42,7 +42,7 @@
     "build-api-dev-docker": "docker-compose -f CoreApi/docker-compose.development.yml build",
     "build-api-prod-docker": "docker-compose -f CoreApi/docker-compose.production.yml build",
     "serve-ui-dev-local": "cd ng-app &&  ng serve",
-    "serve-api-dev-local": "cd CoreApi && dotnet run",
+    "serve-api-dev-local": "cd CoreApi && dotnet run watch --project=CoreApi.csproj",
     "serve-app-dev-local": "concurrently \"npm:serve-ui-dev-local\" \"npm:serve-api-dev-local\"",
     "serve-ui-dev-docker": "cd ng-app && npm run docker-serve-dev",
     "remove-ui-dev-docker-container": "docker rm -f ng.app.dev.container",
