@@ -67,7 +67,7 @@
       "script": "remove-ui-dev-docker-container"
     },
     {
-      "label": "build",
+      "label": "build api",
       "command": "dotnet",
       "type": "process",
       "args": [

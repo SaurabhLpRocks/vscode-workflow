@@ -6,7 +6,11 @@
   "compounds": [
     {
       "name": "Launch API & UI (Live Watch)",
-      "configurations": ["UI Launch", "API Launch (Live Watch)"]
+      "configurations": ["API Launch (Live Watch)", "UI Launch"]
+    },
+    {
+      "name": "Launch API & UI (Docker)",
+      "configurations": ["API Launch (Docker)", "UI Launch (Docker)"]
     }
   ],
   "configurations": [
@@ -82,7 +86,7 @@
       "name": "API Launch (Docker)",
       "type": "docker-coreclr",
       "request": "launch",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build api",
       "configureAspNetCoreSsl": true,
       "appProject": "${workspaceFolder}/CoreApi/CoreApi.csproj",
       "dockerBuild": {
@@ -95,7 +99,8 @@
       "dockerRun": {
         "env": {
           /*The aspnet core docker container runs by default on port 80,
-          force it to run on 5000 & 5001*/
+          force it to run on 5000 & 5001. We are using "0.0.0.0" instead of "localhost"
+          as using "localhost" cause app to break when the docker container is run using docker-compose*/
           "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
         },
         "ports": [
