@@ -32,6 +32,15 @@
     ]
   },
   "scripts": {
+    "setup": "concurrently \"npm:install-dependencies\" \"npm:build-docker-images\"",
+    "install-dependencies": "concurrently \"npm:install-ui-packages\" \"npm:install-api-packages\"",
+    "install-ui-packages": "cd ng-app && npm i",
+    "install-api-packages": "cd CoreApi && dotnet restore",
+    "build-docker-images": "concurrently \"npm:build-ui-dev-docker\" \"npm:build-ui-prod-docker\" \"npm:build-api-dev-docker\" \"npm:build-api-prod-docker\"",
+    "build-ui-dev-docker": "cd ng-app && npm run docker-build-dev",
+    "build-ui-prod-docker": "cd ng-app && npm run docker-build-prod",
+    "build-api-dev-docker": "docker-compose -f CoreApi/docker-compose.development.yml build",
+    "build-api-prod-docker": "docker-compose -f CoreApi/docker-compose.production.yml build",
     "serve-ui-dev-local": "cd ng-app &&  ng serve",
     "serve-api-dev-local": "cd CoreApi && dotnet run",
     "serve-app-dev-local": "concurrently \"npm:serve-ui-dev-local\" \"npm:serve-api-dev-local\"",
