@@ -36,6 +36,17 @@ The complete project is explained in [this blog post](https://medium.com/@spp020
 5.  [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
 6.  [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
+## Prerequisite for Debugging Inside Docker
+
+The API app when run on port 5001 (https://localhost:5001), requires the dev certificate. This dev certificate will be used by the Docker.
+Run following command which will export the certificate to the C:/cert/ folder
+
+    dotnet dev-certs https -v -ep c:\cert\aspnetcore-cert.pfx -p yourpassword
+
+To enable the volumes mouting, make sure you give share permission to docker for the required drive.
+
+![DockerVolumePermission](DockerDriveSharing.png)
+
 ## Initial Setup
 
 Run the command `npm run setup`. The command will setup everything required to run the app with or without Docker for the first time:
