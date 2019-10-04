@@ -49,7 +49,7 @@ To enable the volumes mouting, make sure you give share permission to docker for
 
 ## Initial Setup
 
-Run the command `npm run setup`. The command will setup everything required to run the app with or without Docker for the first time:
+First run the command `npm i` in the root folder (vscode-workflow) and then restart the command line. Now, run the command `npm run setup` again in the root folder. The command will setup everything required to run the app with or without Docker for the first time:
 
 - Install Angular packages
 - Install .Net packages
