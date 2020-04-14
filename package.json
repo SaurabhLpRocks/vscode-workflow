@@ -47,7 +47,7 @@
     "serve-ui-dev-docker": "cd ng-app && npm run docker-serve-dev",
     "remove-ui-dev-docker-container": "docker rm -f ng.app.dev.container",
     "serve-api-dev-docker": "docker-compose -f CoreWebApi/docker-compose.development.yml up --build -d",
-    "serve-app-dev-docker": "docker-compose -f docker-compose.yml up --build -d",
+    "serve-app-dev-docker": "docker-compose -f docker-compose.development.yml up --build -d",
     "serve-ui-prod-docker": "cd ng-app && npm run docker-serve-prod",
     "serve-api-prod-docker": "docker-compose -f CoreWebApi/docker-compose.production.yml up --build -d",
     "serve-app-prod-docker": "concurrently \"npm:serve-api-prod-docker\" \"npm:serve-ui-prod-docker\"",
