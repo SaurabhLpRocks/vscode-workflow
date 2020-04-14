@@ -8,16 +8,16 @@ EXPOSE 443
 
 FROM microsoft/dotnet:2.2-sdk  AS build
 WORKDIR /src
-COPY ["CoreApi.csproj", "CoreApi.csproj"]
+COPY ["CoreWebApi.csproj", "CoreWebApi.csproj"]
 
-RUN dotnet restore "CoreApi.csproj"
+RUN dotnet restore "CoreWebApi.csproj"
 COPY . .
-RUN dotnet build "CoreApi.csproj" -c Release -o /app
+RUN dotnet build "CoreWebApi.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "CoreApi.csproj" -c Release -o /app
+RUN dotnet publish "CoreWebApi.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "CoreApi.dll"]
+ENTRYPOINT ["dotnet", "CoreWebApi.dll"]

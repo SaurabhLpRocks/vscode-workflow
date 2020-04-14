@@ -72,7 +72,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/CoreApi/CoreApi.csproj",
+        "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -97,7 +97,7 @@
       "args": [
         "watch",
         "--project",
-        "${workspaceFolder}/CoreApi/CoreApi.csproj",
+        "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
         "run",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
@@ -110,7 +110,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/CoreApi/CoreApi.csproj",
+        "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],

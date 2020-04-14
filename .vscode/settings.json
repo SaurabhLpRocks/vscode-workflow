@@ -14,11 +14,7 @@
   "editor.formatOnSaveTimeout": 750,
   "npm.enableScriptExplorer": true,
   "docthis.includeDateTag": true,
-  "cSpell.words": [
-    "Dropdown",
-    "SAURABH",
-    "Textbox"
-  ],
+  "cSpell.words": ["Dropdown", "SAURABH", "Textbox"],
   "workbench.colorCustomizations": {
     "activityBar.background": "#d04649",
     "activityBar.foreground": "#e7e7e7",
@@ -41,8 +37,8 @@
   "files.exclude": {
     "ng-app\\node_modules": true,
     "ng-app\\dist": true,
-    "CoreApi\\bin": true,
-    "CoreApi\\obj": true,
+    "CoreWebApi\\bin": true,
+    "CoreWebApi\\obj": true,
     "node_modules": true
   }
 }

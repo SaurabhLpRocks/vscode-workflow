@@ -35,9 +35,9 @@
       "request": "launch",
       "preLaunchTask": "build api",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/CoreApi/bin/Debug/netcoreapp2.2/CoreApi.dll",
+      "program": "${workspaceFolder}/CoreWebApi/bin/Debug/netcoreapp2.2/CoreWebApi.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/CoreApi",
+      "cwd": "${workspaceFolder}/CoreWebApi",
       "stopAtEntry": false,
       // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
       "serverReadyAction": {
@@ -48,7 +48,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "sourceFileMap": {
-        "/Views": "${workspaceFolder}/CoreApi/Views"
+        "/Views": "${workspaceFolder}/CoreWebApi/Views"
       }
     },
     {
@@ -110,12 +110,12 @@
       "request": "launch",
       "preLaunchTask": "build api",
       "configureAspNetCoreSsl": true,
-      "appProject": "${workspaceFolder}/CoreApi/CoreApi.csproj",
+      "appProject": "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
       "dockerBuild": {
-        "dockerfile": "${workspaceFolder}/CoreApi/.docker/development.dockerfile",
+        "dockerfile": "${workspaceFolder}/CoreWebApi/.docker/development.dockerfile",
         /*As our docker file resides inside .docker folder, reset conext to project root
-        i.e. vscode-workflow/CoreApi*/
-        "context": "${workspaceFolder}/CoreApi",
+        i.e. vscode-workflow/CoreWebApi*/
+        "context": "${workspaceFolder}/CoreWebApi",
         "target": "base"
       },
       "dockerRun": {
@@ -137,7 +137,7 @@
         ],
         "volumes": [
           {
-            "localPath": "${workspaceFolder}/CoreApi/",
+            "localPath": "${workspaceFolder}/CoreWebApi/",
             "containerPath": "/src",
             "permissions": "rw"
           }
