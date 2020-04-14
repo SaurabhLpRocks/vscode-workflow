@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  core-api-new-service:
-    image: core.api.new.dev.image
-    container_name: core.api.new.dev.container
+  core-data-api-service:
+    image: core.data.api.dev.image
+    container_name: core.web.api.dev.container
     build:
       args:
         buildconfig: Debug

@@ -1,9 +1,9 @@
-version: "3.4"
+version: '3.4'
 
 services:
-  core-api-service:
-    image: core.api.dev.image
-    container_name: core.api.dev.container
+  core-web-apiservice:
+    image: core.web.api.dev.image
+    container_name: core.web.api.dev.container
     build:
       args:
         buildconfig: Debug
@@ -27,5 +27,5 @@ services:
       - 5001:5001
     volumes:
       # Map the certificate from host to the container
-      - "c:/cert/:/root/.dotnet/https"
-      - "./:/src"
+      - 'c:/cert/:/root/.dotnet/https'
+      - './:/src'
