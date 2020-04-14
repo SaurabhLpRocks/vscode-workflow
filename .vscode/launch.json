@@ -33,7 +33,7 @@
       "name": "API Launch",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build",
+      "preLaunchTask": "build api",
       // If you have changed target frameworks, make sure to update the program path.
       "program": "${workspaceFolder}/CoreApi/bin/Debug/netcoreapp2.2/CoreApi.dll",
       "args": [],
@@ -49,6 +49,28 @@
       },
       "sourceFileMap": {
         "/Views": "${workspaceFolder}/CoreApi/Views"
+      }
+    },
+    {
+      "name": "Data API Launch",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build data api",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/CoreDataApi/bin/Debug/netcoreapp2.2/CoreDataApi.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/CoreDataApi",
+      "stopAtEntry": false,
+      // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/CoreDataApi/Views"
       }
     },
     {
