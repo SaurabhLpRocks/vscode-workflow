@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  core-api-service:
+  core-web-api-service:
     image: core.api.dev.image
     container_name: core.api.dev.container
     build:
@@ -31,9 +31,9 @@ services:
       - 'c:/cert/:/usr/local/share/ca-certificates'
       - './CoreWebApi/:/src'
 
-  core-api-new-service:
-    image: core.api.new.dev.image
-    container_name: core.api.new.dev.container
+  core-data-api-service:
+    image: core.data.api.dev.image
+    container_name: core.data.api.dev.container
     build:
       args:
         buildconfig: Debug
