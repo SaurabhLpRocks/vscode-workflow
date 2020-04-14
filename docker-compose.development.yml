@@ -60,3 +60,17 @@ services:
       - 'c:/cert/:/root/.dotnet/https'
       - 'c:/cert/:/usr/local/share/ca-certificates'
       - './CoreDataApi/:/src'
+  ng-app-service:
+    image: ng.app.dev.image
+    container_name: ng.app.dev.container
+    build:
+      context: ./ng-app
+      dockerfile: .docker/development.dockerfile
+    environment:
+      NODE_ENV: development
+    volumes:
+      - './ng-app/:/usr/share/app'
+      - /app/node_modules/
+    ports:
+      - 4200:80
+    command: ['ng', 'serve', '--host=0.0.0.0', '--watch', '--poll=2000']
