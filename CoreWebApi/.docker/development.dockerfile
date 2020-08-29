@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS base
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS base
 WORKDIR /src
 
 # Copy only the project file.
