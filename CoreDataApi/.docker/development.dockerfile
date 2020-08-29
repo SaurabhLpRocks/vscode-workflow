@@ -15,6 +15,6 @@ COPY . .
 RUN update-ca-certificates
 
 # Expose ports 5000 & 5001 as our app will run on these ports
-EXPOSE 5000 5001
+EXPOSE 5003 5003
 
 ENTRYPOINT ["dotnet", "watch", "--project=CoreDataApi.csproj", "run"]
