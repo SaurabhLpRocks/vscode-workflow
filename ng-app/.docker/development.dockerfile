@@ -8,7 +8,7 @@ WORKDIR /usr/share/app
 
 # install and cache app dependencies
 COPY package.json package.json
-RUN npm i -g @angular/cli@8.0.3
+RUN npm i -g @angular/cli@10.0.8
 COPY package-lock.json package-lock.json
 RUN npm i
 
