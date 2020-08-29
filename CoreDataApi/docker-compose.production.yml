@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  core.web.api.new.service:
+    image: core.web.api.new.prod.image
+    container_name: core.web.api.new.prod.container
+    build:
+      context: .
+      dockerfile: .docker/production.dockerfile
+    ports:
+      - 5011:80
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production

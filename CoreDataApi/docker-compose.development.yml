@@ -1,9 +1,9 @@
-version: "3.4"
+version: '3.4'
 
 services:
-  core-api-service:
-    image: core.api.dev.image
-    container_name: core.api.dev.container
+  core-data-api-service:
+    image: core.data.api.dev.image
+    container_name: core.web.api.dev.container
     build:
       args:
         buildconfig: Debug
@@ -20,12 +20,12 @@ services:
       # Force it to run on ports 5000 & 5001
       # Also we are specifying 0.0.0.0 instead of localhost
       # as the app crashes inside docker when used localhost.
-      - ASPNETCORE_URLS=http://0.0.0.0:5000/;https://0.0.0.0:5001
+      - ASPNETCORE_URLS=http://0.0.0.0:5003/;https://0.0.0.0:5002
       - DOTNET_USE_POLLING_FILE_WATCHER=true
     ports:
-      - 5000:5000
-      - 5001:5001
+      - 5002:5002
+      - 5003:5003
     volumes:
       # Map the certificate from host to the container
-      - "c:/cert/:/root/.dotnet/https"
-      - "./:/src"
+      - 'c:/cert/:/root/.dotnet/https'
+      - './:/src'

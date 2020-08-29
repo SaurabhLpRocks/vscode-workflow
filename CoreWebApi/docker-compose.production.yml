@@ -1,9 +1,9 @@
-version: "3.4"
+version: '3.4'
 
 services:
-  core.api.service:
-    image: core.api.prod.image
-    container_name: core.api.prod.container
+  core.web.api.service:
+    image: core.web.api.prod.image
+    container_name: core.web.api.prod.container
     build:
       context: .
       dockerfile: .docker/production.dockerfile

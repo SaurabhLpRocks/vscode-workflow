@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  core-web-apiservice:
+    image: core.web.api.dev.image
+    container_name: core.web.api.dev.container
+    build:
+      args:
+        buildconfig: Debug
+      context: .
+      dockerfile: .docker/development.dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+      # Set the certificate env variables (We copied certificate from host to below location. See volumes)
+      - Kestrel__Certificates__Default__Path=/root/.dotnet/https/aspnetcore-cert.pfx
+      - Kestrel__Certificates__Default__Password=yourpassword
+
+      # The .net core base image used in the docker file, runs the app on port 80 by default
+      # Force it to run on ports 5000 & 5001
+      # Also we are specifying 0.0.0.0 instead of localhost
+      # as the app crashes inside docker when used localhost.
+      - ASPNETCORE_URLS=http://0.0.0.0:5000/;https://0.0.0.0:5001
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+    ports:
+      - 5000:5000
+      - 5001:5001
+    volumes:
+      # Map the certificate from host to the container
+      - 'c:/cert/:/root/.dotnet/https'
+      - './:/src'

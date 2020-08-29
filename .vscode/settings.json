@@ -14,11 +14,7 @@
   "editor.formatOnSaveTimeout": 750,
   "npm.enableScriptExplorer": true,
   "docthis.includeDateTag": true,
-  "cSpell.words": [
-    "Dropdown",
-    "SAURABH",
-    "Textbox"
-  ],
+  "cSpell.words": ["Dropdown", "SAURABH", "Textbox"],
   "workbench.colorCustomizations": {
     "activityBar.background": "#d04649",
     "activityBar.activeBorder": "#37cb34",
@@ -33,15 +29,17 @@
     "statusBar.background": "#b52e31",
     "statusBarItem.hoverBackground": "#d04649",
     "statusBar.foreground": "#e7e7e7",
-    "activityBar.activeBackground": "#d04649"
+    "activityBar.activeBackground": "#d04649",
+    "activityBar.activeBorder": "#37cb34",
+    "statusBar.border": "#b52e31",
+    "titleBar.border": "#b52e31"
   },
   "peacock.color": "#b52e31",
   "files.exclude": {
     "ng-app\\node_modules": true,
     "ng-app\\dist": true,
-    "CoreApi\\bin": true,
-    "CoreApi\\obj": true,
+    "CoreWebApi\\bin": true,
+    "CoreWebApi\\obj": true,
     "node_modules": true
-  },
-  "svn.ignoreMissingSvnWarning": true
+  }
 }
