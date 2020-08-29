@@ -106,45 +106,13 @@
     },
     {
       "name": "API Launch (Docker)",
-      "type": "docker-coreclr",
+      "type": "docker",
       "request": "launch",
-      "preLaunchTask": "build api",
-      "configureAspNetCoreSsl": true,
-      "appProject": "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
-      "dockerBuild": {
-        "dockerfile": "${workspaceFolder}/CoreWebApi/.docker/development.dockerfile",
-        /*As our docker file resides inside .docker folder, reset conext to project root
-        i.e. vscode-workflow/CoreWebApi*/
-        "context": "${workspaceFolder}/CoreWebApi",
-        "target": "base"
-      },
-      "dockerRun": {
-        "env": {
-          /*The aspnet core docker container runs by default on port 80,
-          force it to run on 5000 & 5001. We are using "0.0.0.0" instead of "localhost"
-          as using "localhost" cause app to break when the docker container is run using docker-compose*/
-          "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
-        },
-        "ports": [
-          {
-            "hostPort": "5000",
-            "containerPort": "5000"
-          },
-          {
-            "hostPort": "5001",
-            "containerPort": "5001"
-          }
-        ],
-        "volumes": [
-          {
-            "localPath": "${workspaceFolder}/CoreWebApi/",
-            "containerPath": "/src",
-            "permissions": "rw"
-          }
-        ]
+      "preLaunchTask": "docker-run-web-api: debug",
+      "netCore": {
+        "appProject": "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj"
       }
     },
-
     {
       "name": "UI E2E Test",
       "type": "node",

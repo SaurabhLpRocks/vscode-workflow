@@ -117,9 +117,51 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Build Api Docker",
-      "type": "npm",
-      "script": "serve-api-dev-docker"
+      "type": "docker-build",
+      "label": "docker-build-web-api: debug",
+      "dependsOn": ["build api"],
+      "dockerBuild": {
+        "tag": "core.api.debug:dev",
+        "target": "base",
+        "dockerfile": "${workspaceFolder}/CoreWebApi/.docker/development.dockerfile",
+        /*As our docker file resides inside .docker folder, reset conext to project root
+        i.e. vscode-workflow/CoreWebApi*/
+        "context": "${workspaceFolder}/CoreWebApi",
+        "pull": true
+      },
+      "netCore": {
+        "appProject": "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj"
+      }
+    },
+    {
+      "type": "docker-run",
+      "label": "docker-run-web-api: debug",
+      "dependsOn": ["docker-build-web-api: debug"],
+      "dockerRun": {
+        "containerName": "CoreApiDebugContainerDev",
+        "ports": [
+          { "hostPort": 5000, "containerPort": 5000 },
+          { "hostPort": 5001, "containerPort": 5001 }
+        ],
+        "volumes": [
+          {
+            "localPath": "${workspaceFolder}/CoreWebApi/",
+            "containerPath": "/src",
+            "permissions": "rw"
+          }
+        ],
+        "env": {
+          /*The aspnet core docker container runs by default on port 80,
+          force it to run on 5000 & 5001. We are using "0.0.0.0" instead of "localhost"
+          as using "localhost" cause app to break when the docker container is run using docker-compose*/
+          "ASPNETCORE_URLS": "http://0.0.0.0:5000;https://0.0.0.0:5001"
+        }
+      },
+      "netCore": {
+        "appProject": "${workspaceFolder}/CoreWebApi/CoreWebApi.csproj",
+        "enableDebugging": true,
+        "configureSsl": true
+      }
     }
   ]
 }
