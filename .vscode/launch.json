@@ -35,7 +35,7 @@
       "request": "launch",
       "preLaunchTask": "build api",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/CoreWebApi/bin/Debug/netcoreapp2.2/CoreWebApi.dll",
+      "program": "${workspaceFolder}/CoreWebApi/bin/Debug/netcoreapp3.1/CoreWebApi.dll",
       "args": [],
       "cwd": "${workspaceFolder}/CoreWebApi",
       "stopAtEntry": false,
@@ -57,7 +57,7 @@
       "request": "launch",
       "preLaunchTask": "build data api",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/CoreDataApi/bin/Debug/netcoreapp2.2/CoreDataApi.dll",
+      "program": "${workspaceFolder}/CoreDataApi/bin/Debug/netcoreapp3.1/CoreDataApi.dll",
       "args": [],
       "cwd": "${workspaceFolder}/CoreDataApi",
       "stopAtEntry": false,
