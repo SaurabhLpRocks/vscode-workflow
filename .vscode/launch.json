@@ -114,6 +114,15 @@
       }
     },
     {
+      "name": "Data API Launch (Docker)",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run-data-api: debug",
+      "netCore": {
+        "appProject": "${workspaceFolder}/CoreDataApi/CoreDataApi.csproj"
+      }
+    },
+    {
       "name": "UI E2E Test",
       "type": "node",
       "request": "launch",
