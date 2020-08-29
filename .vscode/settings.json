@@ -21,6 +21,7 @@
   ],
   "workbench.colorCustomizations": {
     "activityBar.background": "#d04649",
+    "activityBar.activeBorder": "#37cb34",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#37cb34",
@@ -31,7 +32,8 @@
     "titleBar.inactiveForeground": "#e7e7e799",
     "statusBar.background": "#b52e31",
     "statusBarItem.hoverBackground": "#d04649",
-    "statusBar.foreground": "#e7e7e7"
+    "statusBar.foreground": "#e7e7e7",
+    "activityBar.activeBackground": "#d04649"
   },
   "peacock.color": "#b52e31",
   "files.exclude": {
@@ -40,5 +42,6 @@
     "CoreApi\\bin": true,
     "CoreApi\\obj": true,
     "node_modules": true
-  }
+  },
+  "svn.ignoreMissingSvnWarning": true
 }
